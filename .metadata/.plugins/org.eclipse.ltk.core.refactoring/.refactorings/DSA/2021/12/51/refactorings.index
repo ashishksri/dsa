@@ -1,0 +1,10 @@
+1639455238007	Rename type 'CreateHeap'
+1639456677385	Rename type 'HeapOperations'
+1639627698448	Delete element
+1639635043710	Rename method 'finMinComputation'
+1639635071593	Rename local variable 'minCOmputation'
+1639647403776	Rename field 'nodeCurrentSize'
+1639715513405	Rename method 'createMessage'
+1639718595931	Rename package 'knapsack.greedy'
+1639718624047	Rename package 'optimalmerge.greedy'
+1639718633019	Delete element

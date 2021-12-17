@@ -1,0 +1,19 @@
+package huffman.greedy;
+
+public class Stack {
+	
+	int[] a;
+	int front;
+	
+	public Stack(int size) {
+		this.a = new int[size];
+		this.front=-1;
+	}
+	
+	public static void main(String[] args) {
+		
+	}
+	
+	
+
+}

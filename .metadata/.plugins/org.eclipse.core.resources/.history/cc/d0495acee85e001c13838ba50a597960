@@ -1,0 +1,9 @@
+package huffman.greedy;
+
+public class Stack {
+	
+	public static void main(String[] args) {
+		
+	}
+
+}

@@ -1,0 +1,16 @@
+package huffman.greedy;
+
+public class HuffmanCode {
+	
+	String code;
+	char[] a;
+	int[] f;
+	
+	private void setCode(String code) {
+		this.code = code;
+	}
+	
+	
+	
+
+}

@@ -1,0 +1,13 @@
+package heap;
+
+public class SortOperation {
+	
+	int[] a = { 0, 10, 20, 30, 25, 5, 40, 35 };
+	
+	public static void main(String[] args) {
+		SortOperation operation = new SortOperation();
+		operation.sort(operation.a);
+		System.out.println("Heap after sorting is: ");
+	}
+
+}

@@ -1,0 +1,100 @@
+package practise.sort;
+
+import java.util.LinkedList;
+import java.util.List;
+
+class Solution {
+
+	public static void main(String[] args) {
+
+		int[] a = { 3, 2, 1, 4 };
+		Solution pancake = new Solution();
+		List<Integer> list = pancake.pancakeSort(a);
+		for (int b : list) {
+			System.out.println(b);
+		}
+
+	}
+
+	public List<Integer> pancakeSort(int[] a) {
+		List<Integer> indices = new LinkedList<>();
+		int r = a.length - 1;
+		while (!isSorted(a, true)) {
+			int maxIndex = findMaxIndex(a, r);
+			if (r == 1) {
+				if (maxIndex == 0) {
+					int t = a[0];
+					a[0] = a[r];
+					a[r] = t;
+				}
+			}
+			if (maxIndex == r) {
+				// Do nothing
+			} else {
+				// flip till max index;
+				for (int i = 0; i <= (maxIndex) / 2; i++) {
+					int t = a[i];
+					a[i] = a[maxIndex - i];
+					a[maxIndex - i] = t;
+				}
+				if (maxIndex != 0) {
+					indices.add(maxIndex + 1);
+				}
+				// flip whole array
+				if (!isSorted(a, true)) {
+					for (int i = 0; i < (r) / 2; i++) {
+						int t = a[i];
+						a[i] = a[r - i];
+						a[r - i] = t;
+					}
+
+					indices.add(r+1);
+				}
+			}
+			r--;
+		}
+
+		return indices;
+	}
+
+	private int findMaxIndex(int[] a, int r) {
+		int maxIndex = 0;
+		for (int i = 0; i <= r; i++) {
+			if (a[i] > a[maxIndex]) {
+				maxIndex = i;
+			}
+		}
+		return maxIndex;
+	}
+
+	private int[] flip(int[] a, int r) {
+		int maxIndex = findMaxIndex(a, r);
+		for (int i = 0; i <= (maxIndex - 1) / 2; i++) {
+			int t = a[i];
+			a[i] = a[maxIndex - i];
+			a[maxIndex - i] = t;
+		}
+		// flip whole array
+		for (int i = 0; i < (r - 1) / 2; i++) {
+			int t = a[i];
+			a[i] = a[r - i];
+			a[r - i] = t;
+		}
+		return a;
+	}
+
+	public static boolean isSorted(int[] a, boolean asc) {
+		for (int i = 0; i < a.length - 1; i++) {
+			if (asc) {
+				if (a[i] > a[i + 1]) {
+					return false;
+				}
+			} else {
+				if (a[i] < a[i + 1]) {
+					return false;
+				}
+			}
+		}
+		return true;
+	}
+}

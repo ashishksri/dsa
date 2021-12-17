@@ -1,0 +1,21 @@
+package huffman.greedy;
+
+import java.util.Map;
+
+public class HuffmanCode {
+
+	String code;
+	Map<Char, Integer> fMap;
+	
+	
+
+	private void setCode(String code) {
+		this.code = code;
+	}
+
+	private void frequencyPerElement() {
+		int length = code.length();
+
+	}
+
+}

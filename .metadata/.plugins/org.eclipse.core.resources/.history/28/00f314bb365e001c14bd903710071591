@@ -1,0 +1,7 @@
+package optimalmerge.greedy;
+
+public class OptimalMerge {
+	
+	int[] a;
+
+}

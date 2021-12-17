@@ -1,0 +1,78 @@
+package huffman.greedy;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
+
+public class HuffmanCode {
+
+	class Node {
+		private char data;
+		private int f;
+
+		public Node(char data, int f) {
+			this.data = data;
+			this.f = f;
+		}
+	}
+
+	String code;
+	Map<Character, Integer> fMap = new HashMap<>();
+	char[] a;
+	int[] f;
+	Node[] node;
+	int heapSize;
+	boolean debug = true;
+
+	public static void main(String[] args) {
+		HuffmanCode hcode = new HuffmanCode();
+		hcode.setCode("BCCABBDDAECCBBAEDDCC");
+		hcode.frequencyPerElement();
+		hcode.setFrequency();
+	}
+
+	private void setFrequency() {
+		int size = fMap.entrySet().size();
+		heapSize=2*size;
+		if (debug)
+			System.out.println(size);
+		a = new char[size];
+		f = new int[size];
+		Iterator<Entry<Character, Integer>> entrySet = fMap.entrySet().iterator();
+		int c = 0;
+		while (entrySet.hasNext()) {
+			Entry<Character, Integer> next = entrySet.next();
+			if (debug)
+				System.out.println("key is " + next.getKey() + " frequency is " + next.getValue());
+			a[c] = next.getKey();
+			f[c] = next.getValue();
+		}
+	}
+
+	private void setCode(String code) {
+		this.code = code;
+	}
+	
+	private void mergePattern() {
+		node = new Node[heapSize];
+	}
+
+	private void frequencyPerElement() {
+		for (int i = 0; i < code.length(); i++) {
+			char e = code.charAt(i);
+			int f = getCharFrequency(e);
+			if (f == -1) {
+				fMap.put(e, 1);
+			} else {
+				fMap.put(e, f + 1);
+			}
+		}
+	}
+
+	private int getCharFrequency(char e) {
+		int f = fMap.getOrDefault(e, -1);
+		return f;
+	}
+
+}

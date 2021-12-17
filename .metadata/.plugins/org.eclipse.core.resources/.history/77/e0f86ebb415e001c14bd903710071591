@@ -1,0 +1,19 @@
+package huffman.greedy;
+
+public class HuffmanCode {
+
+	String code;
+	
+	
+	
+
+	private void setCode(String code) {
+		this.code = code;
+	}
+
+	private void frequencyPerElement() {
+		int length = code.length();
+
+	}
+
+}

@@ -1,0 +1,21 @@
+package optimalmerge.greedy;
+
+public class OptimalMerge {
+
+	int[] a;
+	
+	public static void main(String[] args) {
+		OptimalMerge merge = new OptimalMerge();
+		int minCOmputation = merge.finMinComputation();
+	}
+
+	private int finMinComputation() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	private void setA(int[] a) {
+		this.a = a;
+	}
+
+}

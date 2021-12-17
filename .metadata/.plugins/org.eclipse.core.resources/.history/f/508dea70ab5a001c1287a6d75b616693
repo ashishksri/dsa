@@ -1,0 +1,24 @@
+package heap;
+
+public class HeapOperations {
+	
+	int[] heap = {};
+	
+	public static void main(String[] args) {
+		
+		HeapOperations operations = new HeapOperations();
+		
+		System.out.println("array length = "+operations.heap.length);
+		int element = 25;
+		operations.insert(int element);
+		
+	}
+
+	private void insert(int e) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+
+}

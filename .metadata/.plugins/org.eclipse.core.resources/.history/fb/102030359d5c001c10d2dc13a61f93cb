@@ -1,0 +1,22 @@
+package heap;
+
+import sorting.array.utils.ArrayUtils;
+
+public class DeleteOperation {
+	int[] a = { 0, 10, 20, 30, 25, 5, 40, 35 };
+	
+	public static void main(String[] args) {
+		DeleteOperation operation = new DeleteOperation();
+		HeapifyOperation heapifyOperation = new HeapifyOperation(operation.a);
+		int[] maxHeap = heapifyOperation.heapify();
+		System.out.println("Max heap generated is..");
+		ArrayUtils.print(maxHeap);
+		int element = operation.delete(maxHeap);
+	}
+
+	private int delete(int[] maxHeap) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

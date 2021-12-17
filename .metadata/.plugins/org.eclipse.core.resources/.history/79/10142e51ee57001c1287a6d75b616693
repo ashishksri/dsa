@@ -1,0 +1,42 @@
+package practise.queue;
+
+public class Queue {
+	int SIZE;
+	int[] q;
+	int front, rear;
+
+	public Queue(int size) {
+		this.SIZE = size;
+		front = rear = -1;
+		q = new int[this.SIZE];
+	}
+
+	public boolean isFull() {
+		if (this.rear == this.SIZE - 1) {
+			return true;
+		}
+		return false;
+	}
+
+	public boolean isEmpty() {
+		if (this.front == -1) {
+			return true;
+		}
+		return false;
+	}
+
+	public void enqueue(int element) {
+		if(isFull()) {
+			throw new IllegalStateException("Q is already full");
+		}
+		if(this.front==-1) {
+			this.front=0;
+		}
+		this.q[rear++]=element;
+	}
+
+	public int dequeue(int element) {
+		int poped = q[this.front];
+	}
+
+}

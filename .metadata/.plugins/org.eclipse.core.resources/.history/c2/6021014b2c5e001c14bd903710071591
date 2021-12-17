@@ -1,0 +1,112 @@
+package knapsack.greedy;
+
+public class Fractional {
+
+	int[] p = new int[7];
+	int[] w = new int[7];
+	int output = 0;
+	int maxWeight = 0;
+	boolean debug = true;
+	int length=0;
+	float[] a;
+
+	public static void main(String[] args) {
+
+		Fractional fractional = new Fractional();
+		int[] p = { 10, 5, 15, 7, 6, 18, 3 };
+		int[] w = { 2, 3, 5, 7, 1, 4, 1 };
+		fractional.setP(p);
+		fractional.setW(w);
+		fractional.setMaxWeight(15);
+		
+		fractional.getMaxProfit();
+
+		System.out.println(fractional.getOutput());
+
+	}
+
+	private int getMaxProfit() {
+		float[] ratio = getPWRatio();
+		setA(ratio);
+		float max = heapifyAndPop();
+		System.out.println(max);
+		max = heapifyAndPop();
+		System.out.println(max);
+		max = heapifyAndPop();
+		System.out.println(max);
+		max = heapifyAndPop();
+		System.out.println(max);
+		max = heapifyAndPop();
+		System.out.println(max);
+		max = heapifyAndPop();
+		System.out.println(max);
+		max = heapifyAndPop();
+		System.out.println(max);
+		return output;
+	}
+	
+	private float heapifyAndPop() {
+		for(int i=2; i<a.length; i++) {
+			int t=i;
+			int j = t/2;
+			while(j>=1) {
+				if(a[t]>a[j]) {
+					float k = a[j];
+					a[j] = a[t];
+					a[t] = k;
+				}
+				t=j;
+				j=t/2;
+			}
+		}
+		float element = a[1];
+		a[1] = a[length-1];
+		length--;
+		System.out.println("Ratio after pop");
+		for(int i=0; i<length;i++) {
+			System.out.print(a[i]+" ");
+		}
+		System.out.println();
+		return element;
+	}
+	
+	private void setA(float[] ratio) {
+		length = p.length+1;
+		a = new float[length];
+		a[0] = 0f;
+		for(int i=1; i<length; i++) {
+			a[i] = ratio[i-1];
+		}
+	}
+
+	private float[] getPWRatio() {
+		float[] ratio = new float[this.p.length];
+		for (int i = 0; i < ratio.length; i++) {
+			ratio[i] = (float)p[i] / w[i];
+			if (debug) {
+				System.out.print(ratio[i] + " ");
+			}
+		}
+		if (debug)
+			System.out.println();
+
+		return ratio;
+	}
+
+	private void setP(int[] p) {
+		this.p = p;
+	}
+
+	private void setW(int[] w) {
+		this.w = w;
+	}
+	
+	private void setMaxWeight(int m) {
+		this.maxWeight = m;
+	}
+
+	private int getOutput() {
+		return this.output;
+	}
+
+}

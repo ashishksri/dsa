@@ -1,0 +1,32 @@
+package graph.undirected;
+
+import practise.queue.Queue;
+
+public class BFS {
+
+	int[][] G = { 
+			{ 0, 0, 0, 0, 0, 0, 0 },
+			{ 0, 0, 1, 1, 0, 0, 0 },
+			{ 0, 1, 0, 0, 1, 0, 0 },
+			{ 0, 1, 0, 0, 1, 0, 0 },
+			{ 0, 0, 1, 1, 0, 1, 1 },
+			{ 0, 0, 0, 0, 1, 0, 0 },
+			{ 0, 0, 0, 0, 1, 0, 0 } 
+			};
+	
+	int[] visited = new int[7];
+	
+	Queue queue = new Queue(7);
+	
+	public void traverse(int i) {
+		System.out.print(i+" ");
+		queue.enqueue(i);
+		int u = queue.dequeue();
+		while(u != -1) {
+			for(int v=1;v<G[u].length;v++) {
+				
+			}
+		}
+	}
+
+}

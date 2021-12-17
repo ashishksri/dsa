@@ -1,0 +1,26 @@
+package graph.undirected;
+
+public class DFS {
+	
+	int[][] G = { { 0, 0, 0, 0, 0, 0, 0 }, { 0, 0, 1, 1, 0, 0, 0 }, { 0, 1, 0, 0, 1, 0, 0 }, { 0, 1, 0, 0, 1, 0, 0 },
+			{ 0, 0, 1, 1, 0, 1, 1 }, { 0, 0, 0, 0, 1, 0, 0 }, { 0, 0, 0, 0, 1, 0, 0 } };
+
+	int[] visited;
+
+	public void traverse(int i) {
+		System.out.print(i + " ");
+		visited[i] = 1;
+		
+		System.out.println();
+	}
+
+	public static void main(String[] args) {
+		DFS dfs = new DFS();
+		for (int i = 1; i <= 6; i++) {
+			dfs.visited = new int[7];
+			System.out.println("traversing from index: "+i);
+			dfs.traverse(i);
+		}
+	}
+
+}

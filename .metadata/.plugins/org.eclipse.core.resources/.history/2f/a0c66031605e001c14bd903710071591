@@ -1,0 +1,206 @@
+package huffman.greedy;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
+
+public class HuffmanCode {
+
+	class Node {
+		private Character data;
+		private int f;
+
+		public Node(Character data, int f) {
+			this.data = data;
+			this.f = f;
+		}
+
+		public char getData() {
+			return this.data;
+		}
+
+		public int getF() {
+			return this.f;
+		}
+	}
+
+	String code;
+	Map<Character, Integer> fMap = new HashMap<>();
+	char[] a;
+	int[] f;
+	int[] fMinHeap;
+	Node[] node;
+	int heapSize;
+	int size;
+	int nodeCurrentIndex;
+	boolean debug = true;
+
+	public static void main(String[] args) {
+		HuffmanCode hcode = new HuffmanCode();
+		hcode.setCode("BCCABBDDAECCBBAEDDCC");
+		hcode.frequencyPerElement();
+		hcode.setFrequency();
+		hcode.createFMinHeap();
+		System.out.println("here");
+		hcode.createNodeStructure();
+		hcode.mergePattern();
+	}
+
+	private void setFrequency() {
+		int size = fMap.entrySet().size();
+		System.out.println("size : = "+size);
+		this.size = size + 1;
+		heapSize = 2 * size+1;
+		if (debug)
+			System.out.println(size);
+		a = new char[size];
+		f = new int[size];
+		Iterator<Entry<Character, Integer>> entrySet = fMap.entrySet().iterator();
+		int c = 0;
+		while (entrySet.hasNext()) {
+			Entry<Character, Integer> next = entrySet.next();
+			if (debug) {
+				System.out.println("key is " + next.getKey() + " frequency is " + next.getValue());
+			}
+			a[c] = next.getKey();
+			f[c] = next.getValue();
+			c++;
+		}
+	}
+
+	private void setCode(String code) {
+		this.code = code;
+	}
+
+	private void mergePattern() {
+		heapifyFrequency();
+		while (size > 2) {
+			System.out.println("size = " + size);
+			int e = popFMHeap() + popFMHeap();
+			insertFMinHeap(e);
+			insertNodeStructure(e);
+		}
+		
+		viewNodeStructure();
+
+	}
+
+	private void createNodeStructure() {
+		node = new Node[heapSize];
+		if (debug)
+			System.out.println("heapsize = " + this.heapSize);
+		node[0] = new Node(null, 0);
+		for (int i = 1; i < a.length + 1; i++) {
+			node[i] = new Node(a[i - 1], f[i - 1]);
+		}
+		nodeCurrentIndex = a.length;
+	}
+
+	private void insertNodeStructure(int e) {
+		nodeCurrentIndex++;
+		node[nodeCurrentIndex] = new Node(null, e);
+	}
+
+	public void viewNodeStructure() {
+		if (debug)
+			System.out.println("Node data");
+		for (int i = 1; i <= nodeCurrentIndex; i++) {
+			System.out.print(node[i].getF()+" ");
+		}
+		System.out.println();
+	}
+	
+	public void heapifyNodeData() {
+		for(int i = (heapSize-1)/2; i>=1; i--) {
+			int t=i;
+			int j=2*t;
+			
+		}
+	}
+
+	private void heapifyFrequency() {
+		for (int i = (size - 1) / 2; i >= 1; i--) {
+			int t = i;
+			int j = t * 2;
+			while (j < size) {
+				if ((j + 1) < size) {
+					if (fMinHeap[j + 1] < fMinHeap[j]) {
+						j++;
+					}
+				}
+				if (fMinHeap[j] < fMinHeap[t]) {
+					int k = fMinHeap[t];
+					fMinHeap[t] = fMinHeap[j];
+					fMinHeap[j] = k;
+				} else {
+					break;
+				}
+				t = j;
+				j = 2 * t;
+			}
+		}
+		if (debug) {
+			System.out.println("Min heap on frequencies..size = " + size);
+			for (int i = 1; i < size; i++) {
+				System.out.print(fMinHeap[i] + " - ");
+			}
+			System.out.println();
+		}
+	}
+
+	public int popFMHeap() {
+		int e = fMinHeap[1];
+		fMinHeap[1] = fMinHeap[size - 1];
+		size--;
+		if (debug) {
+			System.out.println("element poped " + e);
+		}
+		heapifyFrequency();
+		return e;
+	}
+
+	public void insertFMinHeap(int e) {
+		if (debug) {
+			System.out.println("element inserted " + e);
+		}
+		fMinHeap[size] = e;
+		size++;
+		heapifyFrequency();
+	}
+
+	private void createFMinHeap() {
+		fMinHeap = new int[f.length + 1];
+		fMinHeap[0] = 0;
+		if (debug) {
+			System.out.println("frequencies..");
+		}
+		for (int i = 1; i < f.length + 1; i++) {
+			fMinHeap[i] = f[i - 1];
+			if (debug) {
+				System.out.print(fMinHeap[i] + " ");
+			}
+		}
+		if (debug) {
+			System.out.println();
+		}
+	}
+
+	private void frequencyPerElement() {
+		for (int i = 0; i < code.length(); i++) {
+			char e = code.charAt(i);
+			int f = getCharFrequency(e);
+			if (f == -1) {
+				fMap.put(e, 1);
+			} else {
+				fMap.put(e, f + 1);
+			}
+		}
+	}
+
+	private int getCharFrequency(char e) {
+		int f = fMap.getOrDefault(e, -1);
+		return f;
+	}
+
+}

@@ -1,0 +1,23 @@
+package knapsack.greedy;
+
+public class Fractional {
+	
+	int[] p = new int[7];
+	int[] w = new int[7];
+	
+	public static void main(String[] args) {
+		
+		Fractional fractional = new Fractional();
+		fractional.setP({10,5,15,7,6,18,3});
+		
+	}
+	
+	private void setP(int[] p) {
+		this.p = p;
+	}
+	
+	private void setW(int[] w) {
+		this.w = w;
+	}
+
+}

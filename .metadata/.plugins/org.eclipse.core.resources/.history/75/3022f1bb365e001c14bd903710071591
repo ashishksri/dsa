@@ -1,0 +1,11 @@
+package optimalmerge.greedy;
+
+public class OptimalMerge {
+	
+	int[] a;
+	
+	private void setA(int[] a) {
+		this.a=a;
+	}
+
+}

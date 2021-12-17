@@ -1,0 +1,11 @@
+package practise.sort;
+
+import java.util.LinkedList;
+import java.util.List;
+
+class Solution {
+    public List<Integer> pancakeSort(int[] arr) {
+        List<Integer> indices = new LinkedList<>();
+        return indices;
+    }
+}

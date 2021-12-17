@@ -1,0 +1,31 @@
+package tree.binary;
+
+public class BinaryTree {
+	
+	public static class Node{
+		int data;
+		Node left;
+		Node right;
+		
+		public Node(int value) {
+			this.data = value;
+			this.left = null;
+			this.right = null;
+		}
+	}
+	
+	Node root;
+	
+	public void add(int data) {
+		Node newNode = new Node(data);
+		if(root == null) {
+			root = new Node(data);
+		}else {
+			if(data > root.data) {
+				Node newNode = new Node(data);
+				
+			}
+		}
+	}
+
+}

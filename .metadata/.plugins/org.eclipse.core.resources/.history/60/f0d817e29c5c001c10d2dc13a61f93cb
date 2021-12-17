@@ -1,0 +1,12 @@
+package heap;
+
+public class DeleteOperation {
+	int[] a = { 0, 10, 20, 30, 25, 5, 40, 35, 45, 60, 70, 80 };
+	
+	public static void main(String[] args) {
+		DeleteOperation operation = new DeleteOperation();
+		HeapifyOperation heapifyOperation = new HeapifyOperation(operation.a);
+		int[] maxHeap = heapifyOperation.heapify();
+	}
+
+}

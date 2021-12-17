@@ -1,0 +1,13 @@
+package heap;
+
+public class CreateHeapOperation {
+	
+	int[] a = {0,10,20,30,25,5,40,35};
+	
+	public static void main(String[] args) {
+		
+		CreateHeapOperation operation = new CreateHeapOperation();
+		
+	}
+
+}

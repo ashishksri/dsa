@@ -1,0 +1,9 @@
+content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="recursion.Factorial"><rhs name\="recursion.Factorial"/></lhs><lhs name\="recursion.Power"><rhs name\="recursion.Power"/></lhs><lhs name\="recursion.TaylorSeries"><rhs name\="recursion.TaylorSeries"/></lhs><lhs name\="recursion.MemoizationFib"><rhs name\="recursion.MemoizationFib"/></lhs><lhs name\="recursion.PascalTriangle"><rhs name\="recursion.PascalTriangle"/></lhs><lhs name\="recursion.arrayADT.IterativeBinarySearch"><rhs name\="recursion.arrayADT.IterativeBinarySearch"/></lhs><lhs name\="recursion.arrayADT.RecursiveBinarySearch"><rhs name\="recursion.arrayADT.RecursiveBinarySearch"/></lhs><lhs name\="recursion.arrayADT.SumOfArray"><rhs name\="recursion.arrayADT.SumOfArray"/></lhs><lhs name\="sorting.array.comparison.nlogn.RecursiveMergeSort"><rhs name\="sorting.array.comparison.nlogn.RecursiveMergeSort"/></lhs><lhs name\="sorting.array.index.n.BucketSort"><rhs name\="sorting.array.index.n.BucketSort"/></lhs><lhs name\="sorting.array.index.n.BucketSort$Node"><rhs name\="sorting.array.index.n.BucketSort$Node"/></lhs><lhs name\="heap.CreateHeapOperation"><rhs name\="heap.CreateHeapOperation"/></lhs><lhs name\="heap.HeapifyOperation"><rhs name\="heap.HeapifyOperation"/></lhs><lhs name\="heap.DeleteOperation"><rhs name\="heap.DeleteOperation"/></lhs><lhs name\="heap.SortOperation"><rhs name\="heap.SortOperation"/></lhs><lhs name\="bst.CreateOperation"><rhs name\="bst.CreateOperation"/></lhs><lhs name\="bst.CreateOperation$Node"><rhs name\="bst.CreateOperation$Node"/></lhs></history>
+content_assist_number_of_computers=12
+content_assist_proposals_background=255,255,255
+content_assist_proposals_foreground=0,0,0
+eclipse.preferences.version=1
+org.eclipse.jdt.ui.formatterprofiles.version=21
+spelling_locale_initialized=true
+useAnnotationsPrefPage=true
+useQuickDiffPrefPage=true

@@ -1,0 +1,8 @@
+package huffman.greedy;
+
+public class HuffmanCode {
+	
+	String code;
+	
+
+}

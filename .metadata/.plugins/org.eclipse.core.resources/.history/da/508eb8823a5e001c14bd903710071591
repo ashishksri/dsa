@@ -1,0 +1,85 @@
+package optimalmerge.greedy;
+
+public class OptimalMerge {
+
+	int[] a;
+	int minComputation = 0;
+	int[] minHeap;
+	int length = 0;
+
+	public static void main(String[] args) {
+		OptimalMerge merge = new OptimalMerge();
+
+		int[] files = { 4, 8, 6, 2 };
+		merge.setA(files);
+
+		merge.minComputation = merge.findMinComputation();
+		System.out.println("Min computation = " + merge.getMinComputation());
+	}
+
+	private int getMinComputation() {
+		createMinHeap();
+		System.out.println("min heap is: ");
+		for(int i=1; i<length; i++) {
+			System.out.print(minHeap[i]+" ");
+		}
+		System.out.println();
+		return this.minComputation;
+	}
+
+	private int[] createMinHeap() {
+		length = a.length+1;
+		minHeap = new int[length];
+		minHeap[0] = Integer.MAX_VALUE;
+		for (int i = 1; i < minHeap.length; i++) {
+			minHeap[i] = a[i - 1];
+		}
+
+		heapify();
+		return minHeap;
+	}
+	
+	private int popHeap() {
+		int element = minHeap[1];
+		minHeap[1] = minHeap[length-1];
+		length--;
+		return  element;
+	}
+	
+	private void insertHeap(int e) {
+		length++;
+		minHeap[length-1]=e;
+		heapify();
+	}
+
+	private void heapify() {
+		for(int i = (length-1)/2; i>=1; i--) {
+			int t = i;
+			int j=2*t;
+			while(j < length) {
+				if(a[j+1]<a[j]) {
+					j++;
+				}
+				if(a[j]<a[t]) {
+					int k = a[t];
+					a[t] = a[j];
+					a[j] = k;
+				}else {
+					break;
+				}
+				t=j;
+				j=2*t;
+			}
+		}
+	}
+
+	private int findMinComputation() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	private void setA(int[] a) {
+		this.a = a;
+	}
+
+}

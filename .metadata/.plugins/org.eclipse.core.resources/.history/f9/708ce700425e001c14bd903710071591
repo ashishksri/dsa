@@ -1,0 +1,20 @@
+package huffman.greedy;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class HuffmanCode {
+
+	String code;
+	Map<Character, Integer> fMap = new HashMap<>();
+	
+	
+
+	private void setCode(String code) {
+		this.code = code;
+	}
+
+	private void frequencyPerElement() {
+	}
+
+}

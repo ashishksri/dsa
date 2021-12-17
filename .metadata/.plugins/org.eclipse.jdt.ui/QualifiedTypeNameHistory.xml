@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="recursion.Factorial"/>
+    <fullyQualifiedTypeName name="recursion.Power"/>
+    <fullyQualifiedTypeName name="recursion.TaylorSeries"/>
+    <fullyQualifiedTypeName name="recursion.MemoizationFib"/>
+    <fullyQualifiedTypeName name="recursion.PascalTriangle"/>
+    <fullyQualifiedTypeName name="recursion.arrayADT.IterativeBinarySearch"/>
+    <fullyQualifiedTypeName name="recursion.arrayADT.RecursiveBinarySearch"/>
+    <fullyQualifiedTypeName name="recursion.arrayADT.SumOfArray"/>
+    <fullyQualifiedTypeName name="sorting.array.comparison.nlogn.IterativeMergeSort"/>
+    <fullyQualifiedTypeName name="sorting.array.utils.MergeUtils"/>
+    <fullyQualifiedTypeName name="sorting.array.comparison.nlogn.RecursiveMergeSort"/>
+    <fullyQualifiedTypeName name="sorting.array.index.n.BucketSort"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="sorting.array.index.n.BucketSort.Node"/>
+    <fullyQualifiedTypeName name="heap.CreateHeapOperation"/>
+    <fullyQualifiedTypeName name="heap.HeapifyOperation"/>
+    <fullyQualifiedTypeName name="heap.DeleteOperation"/>
+    <fullyQualifiedTypeName name="java.nio.file.attribute.AclEntry"/>
+    <fullyQualifiedTypeName name="heap.SortOperation"/>
+    <fullyQualifiedTypeName name="sorting.array.utils.ArrayUtils"/>
+    <fullyQualifiedTypeName name="bst.CreateOperation"/>
+    <fullyQualifiedTypeName name="bst.CreateOperation.Node"/>
+</qualifiedTypeNameHistroy>

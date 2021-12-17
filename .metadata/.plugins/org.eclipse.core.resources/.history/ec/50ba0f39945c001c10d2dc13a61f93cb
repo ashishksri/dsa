@@ -1,0 +1,11 @@
+package heap;
+
+public class CreateHeap {
+	
+	int[] a = {10,20,30,25,5,40,35};
+	
+	public static void main(String[] args) {
+		
+	}
+
+}

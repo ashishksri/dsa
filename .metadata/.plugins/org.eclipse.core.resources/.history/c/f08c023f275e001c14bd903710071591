@@ -1,0 +1,55 @@
+package knapsack.greedy;
+
+public class Fractional {
+
+	int[] p = new int[7];
+	int[] w = new int[7];
+	int output = 0;
+	boolean debug = true;
+
+	public static void main(String[] args) {
+
+		Fractional fractional = new Fractional();
+		int[] p = { 10, 5, 15, 7, 6, 18, 3 };
+		int[] w = { 2, 3, 5, 7, 1, 4, 1 };
+		fractional.setP(p);
+		fractional.setW(w);
+		
+		fractional.getMaxProfit();
+
+		System.out.println(fractional.getOutput());
+
+	}
+
+	private int getMaxProfit() {
+		float[] ratio = getPWRatio();
+		return output;
+	}
+
+	private float[] getPWRatio() {
+		float[] ratio = new float[this.p.length];
+		for (int i = 0; i < ratio.length; i++) {
+			ratio[i] = p[i] / w[i];
+			if (debug) {
+				System.out.print(ratio[i] + " ");
+			}
+		}
+		if (debug)
+			System.out.println();
+
+		return ratio;
+	}
+
+	private void setP(int[] p) {
+		this.p = p;
+	}
+
+	private void setW(int[] w) {
+		this.w = w;
+	}
+
+	private int getOutput() {
+		return this.output;
+	}
+
+}

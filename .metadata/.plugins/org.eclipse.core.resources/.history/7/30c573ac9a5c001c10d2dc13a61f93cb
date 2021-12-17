@@ -1,0 +1,47 @@
+package heap;
+
+import sorting.array.utils.ArrayUtils;
+
+public class HeapifyOperation {
+
+	int[] a = { 0, 10, 20, 30, 25, 5, 40, 35, 15, 28, 35, 45, 60 };
+
+	public static void main(String[] args) {
+		HeapifyOperation operation = new HeapifyOperation();
+		int[] heap = operation.heapify();
+		System.out.println("After heapify..");
+		ArrayUtils.print(heap);
+	}
+
+	private int[] heapify() {
+		for (int i = (a.length - 1) / 2; i >= 1; i--) {
+			int t = i;
+			int left = 2 * t;
+			int right = left + 1;
+
+			while (right < a.length) {
+				int maxChildIndex = getMaxIndex(left, right);
+				if (a[maxChildIndex] > a[t]) {
+					int k = a[maxChildIndex];
+					a[maxChildIndex] = a[t];
+					a[t] = k;
+				} else {
+					break;
+				}
+				t = maxChildIndex;
+				left = 2 * t;
+				right = left + 1;
+			}
+
+		}
+		return a;
+	}
+
+	private int getMaxIndex(int left, int right) {
+		if (a[left] > a[right]) {
+			return left;
+		}
+		return right;
+	}
+
+}

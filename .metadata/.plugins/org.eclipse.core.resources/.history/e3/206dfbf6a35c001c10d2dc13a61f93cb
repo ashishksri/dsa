@@ -1,0 +1,42 @@
+package heap;
+
+import sorting.array.utils.ArrayUtils;
+
+public class SortOperation {
+	
+	int[] a = { 0, 10, 20, 30, 25, 5, 40, 35 };
+	
+	public static void main(String[] args) {
+		SortOperation operation = new SortOperation();
+		operation.sort(operation.a);
+		System.out.println("Heap after sorting is: ");
+		ArrayUtils.print(operation.a);
+	}
+
+	private void sort() {
+		int length = a.length-1;
+		heapify(length);
+	}
+	
+	private void heapify(int length) {
+		int i = length/2;
+		int j = 2*i;
+		while(j<=length) {
+			if((j+1) <= length) {
+				if(a[j+1]>a[j]) {
+					j++;
+				}
+			}
+			if(a[j] > a[i]) {
+				int t = a[j];
+				a[j] = a[i];
+				a[i] = t;
+			}else {
+				break;
+			}
+			i=j;
+			j=2*i;
+		}
+	}
+
+}
