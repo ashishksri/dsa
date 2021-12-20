@@ -2,18 +2,6 @@ package bst;
 
 public class CreateOperation {
 
-	public class Node {
-		int data;
-		Node left;
-		Node right;
-
-		public Node(int value) {
-			this.data = value;
-			this.left = null;
-			this.right = null;
-		}
-	}
-
 	public static void main(String[] args) {
 		Node root = null;
 		CreateOperation operation = new CreateOperation();
@@ -48,5 +36,7 @@ public class CreateOperation {
 		}
 
 	}
+	
+	
 
 }
