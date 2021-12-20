@@ -1,5 +1,7 @@
 package greedy.spanningtree.prims;
 
+import greedy.spanningtree.Node;
+
 public class PrimsAlgo {
 
 	int edgeCount = 0;

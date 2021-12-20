@@ -1,4 +1,4 @@
-package greedy.spanningtree.prims;
+package greedy.spanningtree;
 
 public class Node {
 
@@ -35,6 +35,10 @@ public class Node {
 	public void setV2(int v2) {
 		this.v2 = v2;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "Node [cost=" + cost + ", v1=" + v1 + ", v2=" + v2 + "]";
+	}
 	
 }
